@@ -8,18 +8,18 @@ export function ping_js() {
     console.log('Printing Here');
     console.log(myFetch(api_root+jsPort + "/app/ping", {}));
 }
-export function getExchangeRates_js(symbol) {
+export function getExchangeRates_js(currency) {
     return myFetch(api_root+jsPort + "/app/getExchangeRates", {
-        symbol
+        currency
     });
 }
 
 export function ping_py() {
     console.log(myFetch(api_root+pyPort + "/ping", {}));
 }
-export function getExchangeRates_py(symbol) {
+export function getExchangeRates_py(currency) {
     return myFetch(api_root+pyPort + "/getExchangeRates", {
-        symbol
+        currency
     })
 }
 

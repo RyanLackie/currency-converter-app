@@ -8,10 +8,10 @@ class Model {
         call_back({ping: 'pong!'});
     }
     
-    getExchangeRates(symbol, call_back) {
+    getExchangeRates(currency, call_back) {
         // Get data from API
         const http = new XMLHttpRequest();
-        const url = 'https://api.exchangeratesapi.io/latest?base='+symbol;
+        const url = 'https://api.exchangeratesapi.io/latest?base='+currency;
         http.open("GET", url, false);
         http.send();
         var exchangeRates = http.responseText;
@@ -28,17 +28,17 @@ class Model {
         
         // Format data into objects
         for (var i = 0; i < exchangeRates.length; i++) {
-            
-            // Found an interesting event where if the symbol is EUR it disapears from the output
-            // I don't think this happends for any other symbols other than EUR
+
+            // Found an interesting event where if the currency is EUR it disapears from the output
+            // I don't think this happends for any other currencies other than EUR
             // Splicing the EUR data back into where it normally is to keep the order constant
-            if (i == 18 && symbol == 'EUR') {
-                exchangeRates.splice(18, 0, {id: 18, symbol: 'EUR', rate: '1.0'});
+            if (i == 18 && currency == 'EUR') {
+                exchangeRates.splice(18, 0, {id: 18, currency: 'EUR', rate: '1.0'});
                 continue;
             }
 
             var temp = exchangeRates[i].split(":");
-            temp = {id: i, symbol: temp[0], rate: temp[1]};
+            temp = {id: i, currency: temp[0], rate: temp[1]};
             exchangeRates[i] = temp;
         }
 
