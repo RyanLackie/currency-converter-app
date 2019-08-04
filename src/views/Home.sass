@@ -58,7 +58,7 @@ $secondaryColor: white
             width: calc(50% - 1px)
             height: 100%
 
-            .currencyInput
+            .amountInput
                 width: calc(80% - 40px)
                 height: 25%
                 margin: 0px auto 30px auto
@@ -75,7 +75,7 @@ $secondaryColor: white
                 -webkit-appearance: none
                 margin: 0
 
-            .countryInput
+            .currencyInput
                 position: relative
                 width: 80%
                 height: 27%
@@ -135,6 +135,71 @@ $secondaryColor: white
                         color: $secondaryColor
                         background-color: $primaryColor
 
+
+    /* Container used to stop squishing of switch on small devices */
+    .switchContainer
+        margin: 10vh auto 0px auto
+
+        /* Container for the slider */
+        .switch 
+            position: relative
+            display: inline-block
+            width: 150px
+            height: 55px
+            
+        /* Hide default checkbox */
+        .switch input 
+            opacity: 0
+            width: 0
+            height: 0
+
+        /* The slider */
+        .slider 
+            position: absolute
+            cursor: pointer
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            border: 1px rgba(0, 0, 0, 0.2) solid
+            background-color: limegreen
+            border-radius: 34px
+            -webkit-transition: .4s
+            transition: .4s
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4)
+
+        /* The slider handle */
+        .slider:before 
+            position: absolute
+            content: ""
+            height: 45px
+            width: 45px
+            top: 4.5px
+            left: 7px
+            background-color: #2b5b84
+            background-image: url('../assets/python-logo.png')
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+            border-radius: 50%
+            -webkit-transition: .4s
+            transition: .4s
+
+        /* Slider on check 
+        input:checked + .slider 
+            
+        input:focus + .slider 
+        */
+
+        /* Slider handle on check */
+        input:checked + .slider:before 
+            -webkit-transform: translateX(90px)
+            -ms-transform: translateX(90px)
+            transform: translateX(90px)
+            background-color: #f0db4f
+            background-image: url('../assets/javascript-logo.png')
+
+    
     //Mobile Compatibility
     @media only screen and (max-width: 500px)
         .centerUI
@@ -154,74 +219,16 @@ $secondaryColor: white
                 height: calc(46% - 1px)
                 margin-bottom: -8px
 
+                .amountInput
+                    margin: 10px auto 10px auto
+
                 .currencyInput
                     width: calc(80% - 40px)
                     height: 30%
-                    margin-bottom: 20px
-                    padding: 0px 10px
-
-    /* Container used to stop squishing of switch on small devices */
-    .switchContainer
-        margin: 10vh auto 0px auto
-
-        /* The switch - the box around the slider */
-        .switch 
-            position: relative
-            display: inline-block
-            width: 150px
-            height: 55px
-            
-        /* Hide default HTML checkbox */
-        .switch input 
-            opacity: 0
-            width: 0
-            height: 0
-
-        /* The bar */
-        .slider 
-            position: absolute
-            cursor: pointer
-            top: 0
-            left: 0
-            right: 0
-            bottom: 0
-            border: 1px rgba(0, 0, 0, 0.2) solid
-            background-color: limegreen
-            border-radius: 34px
-            -webkit-transition: .4s
-            transition: .4s
-            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4)
-
-        /* The knob */
-        .slider:before 
-            position: absolute
-            content: ""
-            height: 45px
-            width: 45px
-            top: 4.5px
-            left: 7px
-            background-color: #2b5b84
-            background-image: url('../assets/python-logo.png')
-            background-position: center
-            background-repeat: no-repeat
-            background-size: cover
-            border-radius: 50%
-            -webkit-transition: .4s
-            transition: .4s
-
-        /* Bar on check */
-        input:checked + .slider 
-            
-        input:focus + .slider 
-            
-
-        /* Knob on check */
-        input:checked + .slider:before 
-            -webkit-transform: translateX(90px)
-            -ms-transform: translateX(90px)
-            transform: translateX(90px)
-            background-color: #f0db4f
-            background-image: url('../assets/javascript-logo.png')
+                    margin-bottom: 10px
+                    padding: 0px
+                    font-size: 15px
+                    line-height: 15px
     
 
         
