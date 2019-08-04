@@ -5,7 +5,6 @@ const pyPort = 82;
 
 // Methods
 export function ping_js() {
-    console.log('Printing Here');
     console.log(myFetch(api_root+jsPort + "/app/ping", {}));
 }
 export function getExchangeRates_js(currency) {
