@@ -1,0 +1,230 @@
+$primaryColor: limegreen
+$secondaryColor: white
+
+// Vertically center items contained inside
+.vcContatiner
+    position: absolute
+    display: flex
+    width: 100%
+    height: 100%
+    justify-content: center
+    flex-direction: column
+    text-align: center
+// Remove ability to highlight
+.noselect
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+
+.Home
+    width: 100%
+    height: 100vh
+    background-color: green
+    overflow: hidden
+
+    .centerUI
+        width: 80%
+        max-width: 700px
+        min-width: 300px
+        height: 70%
+        max-height: 250px
+        min-height: 150px
+        margin-left: auto
+        margin-right: auto
+
+        background-color: $primaryColor
+        color: $secondaryColor
+        //Very subtle effects to increase attention from the eye
+        border-radius: 10px
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+        .spacer
+            position: relative
+            display: inline-block
+            width: 1px
+            height: 100%
+            .line
+                width: 100%
+                height: 80%
+                background-color: $secondaryColor
+
+        .side
+            position: relative
+            display: inline-block
+            width: calc(50% - 1px)
+            height: 100%
+
+            .currencyInput
+                width: calc(80% - 40px)
+                height: 25%
+                margin: 0px auto 30px auto
+                padding: 0px 20px
+                font-size: 20px
+                cursor: text
+
+                background-color: transparent
+                color: $secondaryColor
+                border: 2px $secondaryColor solid
+                border-radius: 10px
+            input[type=number]::-webkit-inner-spin-button, 
+            input[type=number]::-webkit-outer-spin-button
+                -webkit-appearance: none
+                margin: 0
+
+            .countryInput
+                position: relative
+                width: 80%
+                height: 27%
+                margin-left: auto
+                margin-right: auto
+                font-size: 20px
+                text-align: center
+                cursor: pointer
+
+                background-color: transparent
+                color: $secondaryColor
+                border: 2px $secondaryColor solid
+                border-radius: 10px
+                
+                // Custom scroller for optionContainer - Only for chrome sadly
+                // Other browser's dont have the custom scroller but are still ok
+                .optionContainer::-webkit-scrollbar-track
+                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+                    border-radius: 3px
+                    background-color: #F5F5F5
+                .optionContainer::-webkit-scrollbar 
+                    width: 10px
+                    background-color: #F5F5F5
+                .optionContainer::-webkit-scrollbar-thumb
+                    border-radius: 3px
+                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+                    background-color: #555
+                .optionContainer
+                    position: absolute
+                    top: 94%
+                    left: -1%
+                    width: 101%
+                    //Change height of scrolling container for space managment
+                    height: 30vh
+                    max-height: 300px
+                    min-height: 150px
+
+                    visibility: hidden
+                    cursor: pointer
+                    overflow-y: scroll
+                    overflow-x: hidden
+                    border-top: 2px $secondaryColor solid
+                    border-left: 2px $secondaryColor solid
+                    border-bottom: 2px $secondaryColor solid
+                    z-index: 1
+                
+                    .option
+                        width: calc(100% + 10px)    //Add scroll bar width to make text centered
+                        height: 20px
+                        padding-top: 5px
+                        font-size: 15px
+                        text-align: center
+                        color: $primaryColor
+                        background-color: $secondaryColor
+                        outline: 1px $secondaryColor solid
+                    .option:hover
+                        color: $secondaryColor
+                        background-color: $primaryColor
+
+    //Mobile Compatibility
+    @media only screen and (max-width: 500px)
+        .centerUI
+            min-width: 250px
+            min-height: 200px
+
+            .spacer
+                width: 100%
+                height: 1px
+                .line
+                    width: 90%
+                    height: 100%
+                    margin: -10px auto 0px auto
+
+            .side
+                width: 100%
+                height: calc(46% - 1px)
+                margin-bottom: -8px
+
+                .currencyInput
+                    width: calc(80% - 40px)
+                    height: 30%
+                    margin-bottom: 20px
+                    padding: 0px 10px
+
+    /* Container used to stop squishing of switch on small devices */
+    .switchContainer
+        margin: 10vh auto 0px auto
+
+        /* The switch - the box around the slider */
+        .switch 
+            position: relative
+            display: inline-block
+            width: 150px
+            height: 55px
+            
+        /* Hide default HTML checkbox */
+        .switch input 
+            opacity: 0
+            width: 0
+            height: 0
+
+        /* The bar */
+        .slider 
+            position: absolute
+            cursor: pointer
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            border: 1px rgba(0, 0, 0, 0.2) solid
+            background-color: limegreen
+            border-radius: 34px
+            -webkit-transition: .4s
+            transition: .4s
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4)
+
+        /* The knob */
+        .slider:before 
+            position: absolute
+            content: ""
+            height: 45px
+            width: 45px
+            top: 4.5px
+            left: 7px
+            background-color: #2b5b84
+            background-image: url('../assets/python-logo.png')
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+            border-radius: 50%
+            -webkit-transition: .4s
+            transition: .4s
+
+        /* Bar on check */
+        input:checked + .slider 
+            
+        input:focus + .slider 
+            
+
+        /* Knob on check */
+        input:checked + .slider:before 
+            -webkit-transform: translateX(90px)
+            -ms-transform: translateX(90px)
+            transform: translateX(90px)
+            background-color: #f0db4f
+            background-image: url('../assets/javascript-logo.png')
+    
+
+        
+            
+            
+        
