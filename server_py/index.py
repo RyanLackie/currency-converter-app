@@ -23,7 +23,7 @@ def ping_pong():
 @app.route('/getExchangeRates', methods=['POST'])
 def getExchangeRates():
     # Get the symbol passed
-    symbol = request.get_json()['symbol']
+    symbol = request.get_json()['currency']
 
     # Get data from API
     url = 'https://api.exchangeratesapi.io/latest?base='+symbol
