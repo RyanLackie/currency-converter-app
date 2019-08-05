@@ -1,6 +1,6 @@
 # Currency Converter Coding Assessment
 
-This applciation can be viewed at http://165.22.11.241/  
+This applciation can be viewed at http://134.209.217.37/
 It is responsive for various screen sizes.  
 
 To run this application locally use the scripts:
