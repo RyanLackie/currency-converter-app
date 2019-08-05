@@ -22,6 +22,6 @@ The client side interfaces with 2 server side applciations.
 Both gather currency exchange rates from http://exchangeratesapi.io/ but use different languages and frameworks.  
 The default is set to use Python and Flask and the secondary is JavaScript and Node.  
 
-Labels of the parts of the applciation:
+Here is a look into the parts of the application:
 
 <img src="./assets/Application Overview.png" alt="Application Overview.png"/>
