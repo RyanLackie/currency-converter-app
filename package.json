@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start_js": "node server_js/index.js",
-    "start_py": "python server_py/index.py",
+    "start_py": "python server_py/venv/index.py",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
