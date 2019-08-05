@@ -11,7 +11,7 @@ To run this application locally use the scripts:
 
 * Terminal 2
   * (Requires pip and Python3)
-  * cd server_py\venv
+  * cd server_py/venv
   * pip install --requirement requirements.txt
   * npm run start_py
 
