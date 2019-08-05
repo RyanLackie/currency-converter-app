@@ -5,8 +5,8 @@ import requests
 
 
 # Settings
-#host = 'localhost'
-host = '134.209.217.37'
+host = 'localhost'
+#host = '134.209.217.37'
 port = '82'
 DEBUG = True
 app = Flask(__name__)
