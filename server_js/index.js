@@ -20,7 +20,7 @@ app.use('/app', controller);
 
 // Server settings
 //const server = 'localhost';
-const server = "165.22.11.241";
+const server = "134.209.217.37";
 const port = 81;
 
 // Port listen and message
