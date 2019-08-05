@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\memor\Desktop\PyCharm Projects\server_py\venv"
+VIRTUAL_ENV="C:\Users\memor\Desktop\Git Projects\CurrencyConverter\server_py\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

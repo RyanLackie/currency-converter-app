@@ -139,7 +139,7 @@
                 }
             },
             updateExchangeRateUI() {
-                // Get value in at the output rate
+                // Convert to output currency
                 /* 
                     I was going to only take in values up to the .00 position so .009
                     wouldn't have an effect on the output, but when testing other
