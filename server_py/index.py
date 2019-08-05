@@ -1,17 +1,17 @@
 # Required modules
 from flask import Flask, jsonify, request
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 import requests
 
 
 # Settings
-#host = 'localhost'
-host = '165.22.11.241'
+host = 'localhost'
+#host = '165.22.11.241'
 port = '82'
 DEBUG = True
 app = Flask(__name__)
 
-# enable CORS
+# Enable CORS
 CORS(app)
 
 
@@ -22,11 +22,11 @@ def ping_pong():
 
 @app.route('/getExchangeRates', methods=['POST'])
 def getExchangeRates():
-    # Get the symbol passed
-    symbol = request.get_json()['currency']
+    # Get the currency passed
+    currency = request.get_json()['currency']
 
     # Get data from API
-    url = 'https://api.exchangeratesapi.io/latest?base='+symbol
+    url = 'https://api.exchangeratesapi.io/latest?base='+currency
     exchangeRates = requests.get(url).text
 
     # Format into consistent data
@@ -42,10 +42,10 @@ def getExchangeRates():
 
     # Format data into objects
     for i, item in enumerate(exchangeRates):
-        # Found an interesting event where if the symbol is EUR it disapears from the output
-        # I don't think this happends for any other symbols other than EUR
+        # Found an interesting event where if the currency is EUR it disappears from the output
+        # I don't think this happens for any other currency other than EUR
         # Insert the EUR data back into where it normally is to keep the order constant
-        if i == 18 and symbol == 'EUR':
+        if i == 18 and currency == 'EUR':
             exchangeRates.insert(18, {'id': 18, 'currency': 'EUR', 'rate': '1.0'})
             continue
 
