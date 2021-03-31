@@ -1,27 +1,9 @@
-# Currency Converter Coding Assessment
+# Currency Converter
 
-This applciation can be viewed at http://134.209.217.37/
-It is responsive for various screen sizes.  
+This applciation can be viewed at https://currency-converter-vue-app.herokuapp.com/
 
-To run this application locally use the scripts:
-* Terminal 1
-  * (Requires npm and Node)
-  * npm install
-  * npm run serve
+To run this application locally open the project and start a docker inside of the `server_js` and `server_py` directories, and then run `npm run serve`
 
-* Terminal 2
-  * (Requires pip and Python3)
-  * cd server_py/venv
-  * pip install --requirement requirements.txt
-  * npm run start_py
+The client side interfaces with 2 server side applciations. Both gather currency exchange rates from http://exchangeratesapi.io/ but use different languages and frameworks. The default selection is set to use Python and Flask and the secondary is JavaScript and Node.  
 
-* Terminal 3
-  * npm run start_js
-
-The client side interfaces with 2 server side applciations.  
-Both gather currency exchange rates from http://exchangeratesapi.io/ but use different languages and frameworks.  
-The default is set to use Python and Flask and the secondary is JavaScript and Node.  
-
-Here is a look into the parts of the application:
-
-<img src="./assets/Application Overview.png" alt="Application Overview.png"/>
+This app was made as a fun project to explore the connections between the app and the api.
