@@ -42,8 +42,6 @@ class Model {
             exchangeRates[i] = temp;
         }
 
-        //console.log(exchangeRates);
-
         call_back(exchangeRates);
     }
 
