@@ -1,8 +1,8 @@
-//Required modules
+// Required modules
 const express = require('express');
 const app = express();
 
-//app.use settings
+// app.use settings
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -20,8 +20,7 @@ app.use('/app', controller);
 
 // Server settings
 const server = 'localhost';
-//const server = "134.209.217.37";
-const port = 81;
+const port = 8080;
 
 // Port listen and message
 app.listen(port);

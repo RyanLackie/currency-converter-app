@@ -7,7 +7,7 @@ class Model {
     ping(call_back) {
         call_back({ping: 'pong!'});
     }
-    
+
     getExchangeRates(currency, call_back) {
         // Get data from API
         const http = new XMLHttpRequest();
@@ -15,7 +15,7 @@ class Model {
         http.open("GET", url, false);
         http.send();
         var exchangeRates = http.responseText;
-        
+
         // Format into consistent data
         exchangeRates = exchangeRates.substr(10);                           // Remove constant start of data - "{"rates":{"
         exchangeRates = exchangeRates.replace(/['"]+/g, "");                // Remove all '"' chars from string
@@ -25,7 +25,7 @@ class Model {
         // Remove '}' char from last rate string
         var endOfArray = exchangeRates.length - 1;
         exchangeRates[endOfArray] = exchangeRates[endOfArray].substr(0, exchangeRates[endOfArray].length - 1);
-        
+
         // Format data into objects
         for (var i = 0; i < exchangeRates.length; i++) {
 
@@ -46,7 +46,7 @@ class Model {
 
         call_back(exchangeRates);
     }
-    
+
 }
 
 module.exports = Model;

@@ -5,8 +5,10 @@
 
             <div class="side">
                 <div class="vcContatiner">
-                    
-                    <input class="amountInput" id="amountInput" type="number" value="1.00" min="0" step="1" @input="updateExchangeRateUI()">
+
+                    <input class="amountInput" id="amountInput"
+                    type="number" value="1.00" min="0" step="1"
+                    @input="updateExchangeRateUI()">
 
                     <div class="currencyInput noselect" :style="styleCurrencyInput('input')" @click="currencySelectorClicked('input')">
                         <div class="vcContatiner">{{fillCurrencyInfo(this.inputExchangeRate.currency)}}</div>
@@ -30,9 +32,11 @@
 
             <div class="side">
                 <div class="vcContatiner">
-                    
-                    <input class="amountInput" id="amountOutput" type="number" value="1.00" min="0" step="1" @input="updateExchangeRateUI()">
-                    
+
+                    <input class="amountInput" id="amountOutput"
+                    type="number" value="1.00" min="0" step="1"
+                    @input="updateExchangeRateUI()">
+
                     <div class="currencyInput noselect" :style="styleCurrencyInput('output')" @click="currencySelectorClicked('output')">
                         <div class="vcContatiner">{{fillCurrencyInfo(this.outputExchangeRate.currency)}}</div>
 
@@ -113,8 +117,9 @@
             },
 
             updateExchangeRateData() {
+                const currency = this.inputExchangeRate.currency ? this.inputExchangeRate.currency : 'USD';
                 if (!this.serverSwitch) {
-                    api.getExchangeRates_py(this.inputExchangeRate.currency).then(
+                    api.getExchangeRates_py(currency).then(
                         exchangeRates => {
                             console.log('Python');
                             console.log(exchangeRates);
@@ -126,7 +131,7 @@
                     );
                 }
                 else {
-                    api.getExchangeRates_js(this.inputExchangeRate.currency).then(
+                    api.getExchangeRates_js(currency).then(
                         exchangeRates => {
                             console.log('JavaScript');
                             console.log(exchangeRates);
@@ -140,7 +145,7 @@
             },
             updateExchangeRateUI() {
                 // Convert to output currency
-                /* 
+                /*
                     I was going to only take in values up to the .00 position so .009
                     wouldn't have an effect on the output, but when testing other
                     converters they did allow this so I was unsure of what was best practice
@@ -262,7 +267,7 @@
                         return 'Poland Złoty (PLN)'
                 }
             }
-            
+
         },
 
         mounted() {
@@ -282,7 +287,7 @@
                             }
                         }
                     }
-                    
+
                     // Set output to the first - could be changed - normally CAD
                     this.outputExchangeRate = exchangeRates[0];
 

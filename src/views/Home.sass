@@ -23,7 +23,7 @@ $secondaryColor: white
 .Home
     width: 100%
     height: 100vh
-    background-color: green
+    background-color: #f7f7f7
     overflow: hidden
 
     .centerUI
@@ -65,12 +65,12 @@ $secondaryColor: white
                 padding: 0px 20px
                 font-size: 20px
                 cursor: text
-
                 background-color: transparent
                 color: $secondaryColor
                 border: 2px $secondaryColor solid
                 border-radius: 10px
-            input[type=number]::-webkit-inner-spin-button, 
+                box-shadow: none !important // Remove firefox red styling
+            input[type=number]::-webkit-inner-spin-button,
             input[type=number]::-webkit-outer-spin-button
                 -webkit-appearance: none
                 margin: 0
@@ -89,14 +89,14 @@ $secondaryColor: white
                 color: $secondaryColor
                 border: 2px $secondaryColor solid
                 border-radius: 10px
-                
+
                 // Custom scroller for optionContainer - Only for chrome sadly
                 // Other browser's dont have the custom scroller but are still ok
                 .optionContainer::-webkit-scrollbar-track
                     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
                     border-radius: 3px
                     background-color: #F5F5F5
-                .optionContainer::-webkit-scrollbar 
+                .optionContainer::-webkit-scrollbar
                     width: 10px
                     background-color: #F5F5F5
                 .optionContainer::-webkit-scrollbar-thumb
@@ -121,7 +121,7 @@ $secondaryColor: white
                     border-left: 2px $secondaryColor solid
                     border-bottom: 2px $secondaryColor solid
                     z-index: 1
-                
+
                     .option
                         width: calc(100% + 10px)    //Add scroll bar width to make text centered
                         height: 20px
@@ -141,20 +141,20 @@ $secondaryColor: white
         margin: 10vh auto 0px auto
 
         /* Container for the slider */
-        .switch 
+        .switch
             position: relative
             display: inline-block
             width: 150px
             height: 54px
-            
+
         /* Hide default checkbox */
-        .switch input 
+        .switch input
             opacity: 0
             width: 0
             height: 0
 
         /* The slider */
-        .slider 
+        .slider
             position: absolute
             cursor: pointer
             top: 0
@@ -169,7 +169,7 @@ $secondaryColor: white
             box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4)
 
         /* The slider handle */
-        .slider:before 
+        .slider:before
             position: absolute
             content: ""
             height: 45px
@@ -186,14 +186,14 @@ $secondaryColor: white
             transition: .4s
 
         /* Slider handle on check */
-        input:checked + .slider:before 
+        input:checked + .slider:before
             -webkit-transform: translateX(92px)
             -ms-transform: translateX(92px)
             transform: translateX(92px)
             background-color: #f0db4f
             background-image: url('../assets/javascript-logo.png')
 
-    
+
     //Mobile Compatibility
     @media only screen and (max-width: 500px)
         .centerUI
@@ -223,9 +223,8 @@ $secondaryColor: white
                     padding: 0px
                     font-size: 15px
                     line-height: 15px
-    
 
-        
-            
-            
-        
+
+
+
+

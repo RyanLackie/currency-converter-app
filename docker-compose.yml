@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  js:
+    build: .
+    command: node server_js/index.js
+    volumes:
+      - .:/server_js_volume
+    ports:
+      - 8081:8081
+
+  py:
+    build: .
+    command: python server_py/index.py
+    volumes:
+      - .:/server_py_volume
+    ports:
+      - 8082:8082

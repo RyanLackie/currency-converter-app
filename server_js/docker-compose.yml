@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  js:
+    build: .
+    command: node index.js
+    volumes:
+      - .:/server-py
+    ports:
+      - 8080:8080

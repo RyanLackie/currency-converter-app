@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  py:
+    build: .
+    command: python index.py
+    volumes:
+      - .:/server-js
+    ports:
+      - 7000:7000
