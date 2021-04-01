@@ -1,5 +1,5 @@
 const apiRoot = "http://localhost";
-const jsPort = 8080;
+const jsPort = 8000;
 const pyPort = 7000;
 
 // Methods

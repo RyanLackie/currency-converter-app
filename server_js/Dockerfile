@@ -8,5 +8,5 @@ COPY package*.json /server-js/
 RUN npm install
 # Bundle app source
 COPY . /server-js
-EXPOSE 8080
+EXPOSE 8000
 CMD [ "node", "index.js" ]

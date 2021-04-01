@@ -1,4 +1,5 @@
 // Required modules
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
@@ -19,8 +20,8 @@ app.use('/app', controller);
 
 
 // Server settings
-const server = 'localhost';
-const port = 8080;
+const server = process.env.SERVER_HOST;
+const port = process.env.SERVER_PORT;
 
 // Port listen and message
 app.listen(port);
