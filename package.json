@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start_js": "node server_js/index.js",
-    "start_py": "python server_py/venv/index.py",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -12,8 +10,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "xmlhttprequest": "^1.8.0"
+    "vue-router": "^3.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",

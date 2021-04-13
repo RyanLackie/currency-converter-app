@@ -3,6 +3,9 @@ node_modules
 /dist
 
 # local env files
+.env
+server_py/.env
+server_js/.env
 .env.local
 .env.*.local
 

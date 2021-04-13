@@ -1,8 +1,9 @@
-//Required modules
+// Required modules
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
-//app.use settings
+// app.use settings
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -19,9 +20,8 @@ app.use('/app', controller);
 
 
 // Server settings
-const server = 'localhost';
-//const server = "134.209.217.37";
-const port = 81;
+const server = process.env.SERVER_HOST;
+const port = process.env.SERVER_PORT;
 
 // Port listen and message
 app.listen(port);
