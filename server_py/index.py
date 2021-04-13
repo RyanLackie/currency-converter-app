@@ -31,7 +31,6 @@ def ping_pong():
 def getExchangeRates():
     # Get the currency passed
     currency = 'USD' if not 'currency' in request.json else request.json['currency']
-    print(currency)
 
     # Get data from API
     url = f"https://v6.exchangerate-api.com/v6/{os.getenv('ACCESS_KEY')}/latest/{currency}"

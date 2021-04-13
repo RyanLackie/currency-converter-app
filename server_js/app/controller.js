@@ -14,7 +14,7 @@ app.post('/ping', (req, res) => {
 
 app.post('/getExchangeRates', (req, res) => {
     model.getExchangeRates(
-        req.body.currency, exchangeRates => res.send(exchangeRates)
+        req.body.currency, response => res.status(response.status).send(response.data)
     );
 });
 
