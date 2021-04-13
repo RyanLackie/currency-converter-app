@@ -1,9 +1,31 @@
 # Currency Converter
 
-This applciation can be viewed at https://currency-converter-vue-app.herokuapp.com/
+## Project setup
+This project will need 3 seperate terminals based in the projects root directory with the following code:
 
-To run this application locally open the project and start a docker inside of the `server_js` and `server_py` directories, and then run `npm run serve`
+Terminal 1
+```
+npm install
+npm run serve
+(Watch for the console output to see the local address the project will be viewable at)
+```
 
-The client side interfaces with 2 server side applciations. Both gather currency exchange rates from http://exchangeratesapi.io/ but use different languages and frameworks. The default selection is set to use Python and Flask and the secondary is JavaScript and Node.  
+Terminal 2
+```
+cd server_py
+docker-compose up --build
+```
 
-This app was made as a fun project to explore the connections between the app and the api.
+Terminal 3
+```
+cd server_js
+docker-compose up --build
+```
+
+## About This Project
+This application was made to play around with client to server side connections 🥳
+
+In the app you can enter an amount and a currency, and then see the amount it is equal to in another currency using the http://exchangeratesapi.io/ api.
+
+Down at the bottom there is a switch that will display the python or javascript icon. You can use this to switch between the 2 servers (Node and Flask) you started during setup.
+
